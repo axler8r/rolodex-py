@@ -1,6 +1,8 @@
 from enum import IntEnum
 from dataclasses import dataclass
 
+from rolodex import logger
+
 
 class EmailAddressKind(IntEnum):
     ''' Kind of email address '''
@@ -11,10 +13,19 @@ class EmailAddressKind(IntEnum):
 
 @dataclass(order=True, frozen=True)
 class EmailAddress:
-    address: str = ''
+    address: str
     kind: EmailAddressKind = EmailAddressKind.Unspecified
 
 
 #TODO: add validator
 def create(address: str, kind: EmailAddressKind) -> EmailAddress:
-    return EmailAddress(address, kind)
+    logger.debug("address={}", address)
+    logger.debug("kind={}", kind)
+
+    if not address:
+        raise ValueError("address can not be empty to None")
+    # TODO: validate the email address format (email validator)
+
+    result = EmailAddress(address, kind)
+    logger.debug("result={}", result)
+    return result
