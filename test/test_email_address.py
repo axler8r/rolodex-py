@@ -8,7 +8,7 @@ def test_create_email_address():
 
 
 def test_create_nil_email_address():
-    ea = EmailAddress()
+    ea = EmailAddress('')
     assert ea.address == '' and \
         ea.kind == EmailAddressKind.Unspecified
 
