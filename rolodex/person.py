@@ -8,7 +8,7 @@ import arrow
 from rolodex import logger
 from rolodex.email_address import EmailAddress
 from rolodex.address import Address
-from rolodex.telphone_number import TelephoneNumber
+from rolodex.telephone_number import TelephoneNumber
 from rolodex.handle import Handle
 
 
