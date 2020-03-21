@@ -13,8 +13,8 @@ class TelephoneNumberKind(IntEnum):
 
 @dataclass(order=True, frozen=True)
 class TelephoneNumber:
-    country_code: str = None
-    area_code: str = ''
-    number: str = ''
-    extension: str = None
+    country_code: str
+    area_code: str
+    number: str
+    extension: str
     kind: TelephoneNumberKind = TelephoneNumberKind.Unspecified
