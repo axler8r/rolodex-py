@@ -17,8 +17,11 @@ class EmailAddress:
     kind: EmailAddressKind = EmailAddressKind.Unspecified
 
 
-#TODO: add validator
-def create(address: str, kind: EmailAddressKind) -> EmailAddress:
+# TODO: add validator
+def create(
+        address: str = None,
+        kind: EmailAddressKind = EmailAddressKind.Unspecified
+) -> EmailAddress:
     logger.debug("address={}", address)
     logger.debug("kind={}", kind)
 
