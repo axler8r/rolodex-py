@@ -8,6 +8,7 @@ flake8 = "*"
 ipython = "*"
 autopep8 = "*"
 nose2 = "*"
+mypy = "*"
 
 [packages]
 click = "*"
