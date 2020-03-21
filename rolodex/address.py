@@ -50,13 +50,13 @@ def create(
 
     if not street_number:
         raise ValueError("street_number cannot be empty or None")
-    
+
     if not street:
         raise ValueError("steet cannot be empty or None")
-    
+
     if not city:
         raise ValueError("city cannot be empty or None")
-    
+
     if not code:
         raise ValueError("code cannot be empty or None")
 
