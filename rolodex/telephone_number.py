@@ -31,11 +31,11 @@ def create(
     coutry_code = kwargs.get('country_code', None)
     extension = kwargs.get('extension', None)
 
-    logger.debug('country_code={}', coutry_code)
-    logger.debug('area_code={}', area_code)
-    logger.debug('number={}', number)
-    logger.debug('extension={}', extension)
-    logger.debug('kine={}', kind)
+    logger.trace('country_code={}', coutry_code)
+    logger.trace('area_code={}', area_code)
+    logger.trace('number={}', number)
+    logger.trace('extension={}', extension)
+    logger.trace('kine={}', kind)
 
     if not area_code:
         raise ValueError('area_code cannot be empty or None')
@@ -45,5 +45,5 @@ def create(
 
     result: TelephoneNumber = TelephoneNumber(
         coutry_code, area_code, number, extension, kind)
-    logger.debug('result={}', result)
+    logger.trace('result={}', result)
     return result

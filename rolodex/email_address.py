@@ -22,13 +22,13 @@ def create(
         address: str = None,
         kind: EmailAddressKind = EmailAddressKind.Unspecified
 ) -> EmailAddress:
-    logger.debug("address={}", address)
-    logger.debug("kind={}", kind)
+    logger.trace("address={}", address)
+    logger.trace("kind={}", kind)
 
     if not address:
         raise ValueError("address can not be empty to None")
     # TODO: validate the email address format (email validator)
 
     result = EmailAddress(address, kind)
-    logger.debug("result={}", result)
+    logger.trace("result={}", result)
     return result

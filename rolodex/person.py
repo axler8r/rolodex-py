@@ -48,14 +48,14 @@ def create(
         addresses: Addresses,
         handles: Handles
 ) -> Person:
-    logger.debug("given_names={}", given_names)
-    logger.debug("family_name={}", family_name)
-    logger.debug("birth_date={}", birth_date)
-    logger.debug("gender={}", gender)
-    logger.debug("telephone_numbers={}", telephone_numbers)
-    logger.debug("email_addresses={}", email_addresses)
-    logger.debug("addresses={}", addresses)
-    logger.debug("hanldes={}", handles)
+    logger.trace("given_names={}", given_names)
+    logger.trace("family_name={}", family_name)
+    logger.trace("birth_date={}", birth_date)
+    logger.trace("gender={}", gender)
+    logger.trace("telephone_numbers={}", telephone_numbers)
+    logger.trace("email_addresses={}", email_addresses)
+    logger.trace("addresses={}", addresses)
+    logger.trace("hanldes={}", handles)
 
     result = Person(
         given_names=given_names,
@@ -66,12 +66,12 @@ def create(
         email_addresses=email_addresses,
         addresses=addresses,
         handles=handles)
-    logger.debug("result={}")
+    logger.trace("result={}")
     return result
 
 
 def _date(date: str) -> date:
-    logger.debug("date={}", date)
+    logger.trace("date={}", date)
 
     if not date:
         raise ValueError("date cannot be empty or None")
@@ -82,5 +82,5 @@ def _date(date: str) -> date:
     except ValueError as e:
         logger.exception(e)
         raise e
-    logger.debug("result={}", result)
+    logger.trace("result={}", result)
     return result

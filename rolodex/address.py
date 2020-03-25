@@ -38,21 +38,23 @@ def create(
     suburb: str = kwargs.get('suburb', None)
     country: str = kwargs.get('country', None)
 
-    logger.debug("unit_number={}", unit_number)
-    logger.debug("unit={}", unit)
-    logger.debug("street_number={}",  street_number)
-    logger.debug("street={}", street)
-    logger.debug("suburb={}", suburb)
-    logger.debug("city={}", city)
-    logger.debug("code={}", code)
-    logger.debug("country={}", country)
-    logger.debug("kind={}", kind)
+    logger.trace("unit_number={}", unit_number)
+    logger.trace("unit={}", unit)
+    logger.trace("street_number={}",  street_number)
+    logger.trace("street={}", street)
+    logger.trace("suburb={}", suburb)
+    logger.trace("city={}", city)
+    logger.trace("code={}", code)
+    logger.trace("country={}", country)
+    logger.trace("kind={}", kind)
 
     if not street_number:
         raise ValueError("street_number cannot be empty or None")
 
-    if not street:
-        raise ValueError("steet cannot be empty or None")
+    result = Address(unit_number, unit, street_number, street,
+                     suburb, city, code, country, kind)
+    logger.trace("result={}", result)
+    return result
 
     if not city:
         raise ValueError("city cannot be empty or None")
