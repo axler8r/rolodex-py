@@ -77,6 +77,10 @@ def _date(date: str) -> date:
         raise ValueError("date cannot be empty or None")
 
     # TODO: catch exception and return meaningful value
-    result = arrow.get(date).date()
+    try:
+        result = arrow.get(date).date()
+    except ValueError as e:
+        logger.exception(e)
+        raise e
     logger.debug("result={}", result)
     return result
