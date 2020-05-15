@@ -1,6 +1,6 @@
 from enum import IntEnum
 from dataclasses import dataclass
-from typing import Union, Mapping, Any
+from typing import Union, Mapping, Any, Optional
 
 from rolodex import logger
 
@@ -27,10 +27,10 @@ class Address:
 
 
 def create(
-        street_number: str = None,
-        street: str = None,
-        city: str = None,
-        code: str = None,
+        street_number: str,
+        street: str,
+        city: str,
+        code: str,
         kind: AddressKind = AddressKind.Unspecified,
         **kwargs
 ) -> Address:
@@ -49,31 +49,7 @@ def create(
     logger.trace("country={}", country)
     logger.trace("kind={}", kind)
 
-    error = _validate(
-        street_number=street_number,
-        street=street,
-        city=city,
-        code=code)
-    if error:
-        raise error
-
     result = Address(unit_number, unit, street_number, street,
                      suburb, city, code, country, kind)
     logger.trace("result={}", result)
     return result
-
-
-def _validate(**kwargs: Mapping[str, Any]) -> Union[ValueError, None]:
-    conditions = {
-        'street_number': kwargs.get('street_number', None),
-        'street': kwargs.get('street', None),
-        'city': kwargs.get('city', None),
-        'code': kwargs.get('code', None)
-    }
-    errors = []
-    for k, v in conditions:
-        if not v:
-            errors.append(f'{k} cannot be empty or None')
-
-    if errors:
-        return ValueError(errors)
