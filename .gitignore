@@ -142,5 +142,6 @@ cython_debug/
 media
 static
 
-# project directories
+# project artifacts
 .vscode/
+/conftest.py
