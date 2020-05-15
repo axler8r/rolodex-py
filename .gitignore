@@ -144,4 +144,4 @@ static
 
 # project artifacts
 .vscode/
-/conftest.py
+conftest.py
