@@ -1,4 +1,4 @@
-from rolodex.email_address import EmailAddress, EmailAddressKind, create
+from rolodex.model.email_address import EmailAddress, EmailAddressKind, create
 
 
 def test_create_email_address():
