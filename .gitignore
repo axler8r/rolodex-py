@@ -144,4 +144,5 @@ static
 
 # project artifacts
 .vscode/
+.idea/
 conftest.py

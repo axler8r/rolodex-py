@@ -1,11 +1,11 @@
 from enum import IntEnum
 from dataclasses import dataclass
 
-from rolodex import logger
+from loguru import logger
 
 
 class EmailAddressKind(IntEnum):
-    ''' Kind of email address '''
+    """ Kind of email address """
     Unspecified = 0
     Home = 10
     Office = 20

@@ -1,11 +1,11 @@
 from enum import IntEnum
 from dataclasses import dataclass
 
-from rolodex import logger
+from loguru import logger
 
 
 class TelephoneNumberKind(IntEnum):
-    ''' Kind of telepohone number '''
+    """ Kind of telephone number """
     Unspecified = 0
     Home = 10
     Office = 20
@@ -28,10 +28,10 @@ def create(
         kind=TelephoneNumberKind.Unspecified,
         **kwargs
 ) -> TelephoneNumber:
-    coutry_code = kwargs.get('country_code', None)
+    country_code = kwargs.get('country_code', None)
     extension = kwargs.get('extension', None)
 
-    logger.trace('country_code={}', coutry_code)
+    logger.trace('country_code={}', country_code)
     logger.trace('area_code={}', area_code)
     logger.trace('number={}', number)
     logger.trace('extension={}', extension)
@@ -44,6 +44,6 @@ def create(
         raise ValueError('number cannot be empty or None')
 
     result: TelephoneNumber = TelephoneNumber(
-        coutry_code, area_code, number, extension, kind)
+        country_code, area_code, number, extension, kind)
     logger.trace('result={}', result)
     return result

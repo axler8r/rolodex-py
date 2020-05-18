@@ -1,12 +1,11 @@
-from enum import IntEnum
 from dataclasses import dataclass
-from typing import Union, Mapping, Any, Optional
+from enum import IntEnum
 
-from rolodex import logger
+from loguru import logger
 
 
 class AddressKind(IntEnum):
-    ''' Kind of telepohone number '''
+    """ Kind of telephone number """
     Unspecified = 0
     Home = 10
     Office = 20
