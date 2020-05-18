@@ -1,7 +1,7 @@
 from enum import IntEnum
 from dataclasses import dataclass
 
-from loguru import logger
+from rolodex import logger
 
 
 class TelephoneNumberKind(IntEnum):
