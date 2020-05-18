@@ -2,10 +2,10 @@ from dataclasses import dataclass
 from datetime import date
 from enum import IntEnum
 from typing import Set
-from loguru import logger
 
 import arrow
 
+from rolodex import logger
 from rolodex.email_address import EmailAddress
 from rolodex.address import Address
 from rolodex.telephone_number import TelephoneNumber

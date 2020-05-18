@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from enum import IntEnum
 
-from loguru import logger
+from rolodex import logger
 
 
 class AddressKind(IntEnum):
