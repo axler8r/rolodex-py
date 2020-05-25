@@ -11,6 +11,7 @@ mypy = "*"
 pynvim = "*"
 pytest = "*"
 hypothesis = "*"
+pylint = "*"
 
 [packages]
 click = "*"

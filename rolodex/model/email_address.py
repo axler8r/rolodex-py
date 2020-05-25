@@ -17,18 +17,26 @@ class EmailAddress:
     kind: EmailAddressKind = EmailAddressKind.Unspecified
 
 
-# TODO: add validator
 def create(
-        address: str = None,
+        address: str,
         kind: EmailAddressKind = EmailAddressKind.Unspecified
 ) -> EmailAddress:
-    logger.trace("address={}", address)
-    logger.trace("kind={}", kind)
+    """EmailAddress factory.
+
+    Keyword Arguments:
+        address (str): Email address.
+        kind (EmailAddressKind, optional): Kind of email address.
+             Defaults to TelephoneNumberKind.Unspecified.
+
+    Returns:
+        EmailAddress: Newly created EmailAddress.
+    """
+    logger.trace("{address=}", address)
+    logger.trace("{kind=}", kind)
 
     if not address:
-        raise ValueError("address can not be empty to None")
-    # TODO: validate the email address format (email validator)
+        raise ValueError('Invalid value ({address=}).')
 
-    result = EmailAddress(address, kind)
-    logger.trace("result={}", result)
+    result = EmailAddress(address=address, kind=kind)
+    logger.trace("{result=}", result)
     return result
